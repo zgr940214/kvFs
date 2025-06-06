@@ -1,0 +1,16 @@
+{
+  // 让 clang-format 只在找到了 .clang-format 时才格式化，
+  // 如果没有找到就什么都不做。
+  "clang-format.fallbackStyle": "none",
+  // 用 xaver.clang-format 插件或 LLVM 自带的 clang-format 都可以，只要保证"clang-format"可执行。
+  "C_Cpp.clang_format_fallbackStyle": "none",
+  // （下面这两行是打开格式化时机，针对 C/C++ 文件）
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true
+  },
+}
