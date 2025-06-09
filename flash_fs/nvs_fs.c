@@ -2,8 +2,8 @@
 
 #define FLIP_META_ID(mid) (~(mid))
 
-static uint16_t fs_map_lo_to_phys_id(uint16_t lblk_id) {
-
+static uint16_t fs_map_lo_to_phys_id(nvs_fs_context_t* ctx, uint16_t lblk_id) {
+    ctx->ops->read(ctx->cfg,  );
 }
 
 /**
@@ -13,7 +13,9 @@ static uint32_t fs_get_phys_addr(nvs_fs_context_t* ctx, uint16_t phys_id, uint16
     return ctx->cfg->blk_size * phys_id + offset;
 }
 
-static int fs_compact_dblk(nvs_fs_context_t* ctx, uint16_t lblk);
+static int fs_compact_dblk(nvs_fs_context_t* ctx, uint16_t lblk) {
+
+};
 
 /**
  * @brief Update lblk meta in meta block

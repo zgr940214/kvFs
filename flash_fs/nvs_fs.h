@@ -26,8 +26,8 @@ typedef struct {
 typedef struct {
     int (*init) (nvs_fs_flash_config_t* cfg);
     int (*flush) (nvs_fs_flash_config_t* cfg, uint32_t scratch_id);
-    int (*prog) (nvs_fs_flash_config_t* cfg, uint32_t block_id, uint8_t* data, uint32_t size);
-    int (*read) (nvs_fs_flash_config_t* cfg, uint32_t block_id, uint8_t* data, uint32_t size);
+    int (*prog) (nvs_fs_flash_config_t* cfg, uint32_t block_id, uint32_t offset, uint8_t* data, uint32_t size);
+    int (*read) (nvs_fs_flash_config_t* cfg, uint32_t block_id, uint32_t offset, uint8_t* data, uint32_t size);
     int (*erase) (nvs_fs_flash_config_t* cfg, uint32_t block_id, uint32_t size);
 } nvs_fs_flash_ops_t;
 
@@ -43,8 +43,6 @@ typedef struct {
     nvs_fs_mblk_header_t header;
     uint16_t activated_fid;
     uint16_t used_lblk;
-    nvs_fs_fid_t fid_list[NVS_MAX_FILE_NUM];
-    nvs_fs_dblock_t dblk[NVS_DBLK_MAX_NUM];
  } nvs_fs_context_t;
 
  /**
