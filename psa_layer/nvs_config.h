@@ -12,6 +12,7 @@
 #define NVS_MAX_FILE_NUM        96
 #define NVS_FLASH_SIZE          (1u << 18) // 256KB)
 #define NVS_FLASH_MINIAML_PROGRAM_UNIT 256 // 256 Bytes
+#define NVS_FLASH_ALIGNMENT     4  // bytes
 
 // flash size check
 static_assert(NVS_FLASH_SIZE >= (NVS_BLK_MAX_NUM * NVS_BLK_SIZE))

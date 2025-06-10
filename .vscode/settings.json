@@ -13,4 +13,8 @@
     "editor.defaultFormatter": "xaver.clang-format",
     "editor.formatOnSave": true
   },
+  "[h]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true
+  },
 }
